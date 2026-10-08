@@ -14,6 +14,13 @@ def ranking(names: list[str], scores: list[float]) -> list[str]:
     indices = list(range(len(names)))
     indices.sort(key=lambda i: scores[i], reverse=True)
     return [names[i] for i in indices]
+def above_average(names: list[str], scores: list[float]) -> list[str]:
+    avg = average(scores)
+    result = []
+    for i in range(len(names)):
+        if scores[i] > avg:
+            result.append(names[i])
+    return result
 
         
 
