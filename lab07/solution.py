@@ -26,3 +26,4 @@ def column_range(matrix: list[list[float]], column: int) -> float:
     col_data = arr[:, column]
     res = (col_data.max() - col_data.min()).round(6)
     return float(res)
+#финальная версия для проверки
