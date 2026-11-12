@@ -77,3 +77,15 @@ changed_matrix[ :, -1 ] = -1
 changed_matrix[ 1:4, 1:4 ] = 100
 print("Итоговая changed_matrix:\n", changed_matrix)
 print("Исходная matrix:\n", matrix)
+
+# Задание 6. Изменение формы
+print("\n--- Задание 6 ---")
+numbers = np.arange(12)
+table = numbers.reshape(3, 4)
+transposed = table.T
+
+print("Форма numbers:", numbers.shape)
+print("Форма table:", table.shape)
+print("Форма transposed:", transposed.shape)
+# reshape(3, 4) работает, так как 3 * 4 = 12 элементов (совпадает с размером исходного массива).
+# reshape(5, 3) вызовет ошибку ValueError, так как требуется 5 * 3 = 15 элементов.
