@@ -19,3 +19,24 @@ def vector_report(values):
     }
 
 
+def change_vector(values):
+    # Создаём независимую копию массива, чтобы не менять исходные данные
+    arr = np.asarray(values).copy()
+    arr[2:5] = 99    # заменяем элементы с индексами 2, 3, 4 на 99
+    arr[::2] = -1    # заменяем каждый второй элемент на -1
+    return arr.tolist()
+
+
+def cap_above(values, limit):
+    # Создаём копию массива
+    arr = np.asarray(values).copy()
+    # Логическая маска: находим все элементы больше limit и заменяем их на limit
+    arr[arr > limit] = limit
+    return arr.tolist()
+
+
+def celsius_to_fahrenheit(values):
+    arr = np.asarray(values, dtype=float)
+    # Векторизованное вычисление сразу для всего массива без циклов
+    fahrenheit = arr * 9 / 5 + 32
+    return fahrenheit.tolist()
